@@ -14,3 +14,9 @@ GUILLERMO CANO
 
 Para diseñar e implementar la captura de datos según la configuración seleccionada en el Work01, se deberá adaptar los datos para que se almacene en la memoria el pixel con el formato RGB332. Según el esquema de trabajo una vez se tenga el diseño "captura_datos_downsampler" se deberá instanciar el bloqlue HDL en el test_cam.v y proceder a probar la funcionalidad del diseño. Para lo cual se debera analizar el proyecto propuesto ***test_cam.xise*** junto con la figura siguiente.
 
+
+
+
+
+
+colocar el reloj  de la camara ov7670
