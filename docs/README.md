@@ -39,6 +39,13 @@ Para lo cual, la captura de datos debe ser acorde al funcionamiento de la cámar
 
 **1. Diseñar el sistema digital de captura de los pixeles de la cámara. No es necesario incluir las señales de control  Xclk, pwdn y reset, estas están descritas en el top del proyecto.**  
 
+para desarrolar el software que permita ella captura de datos de la camara se debe tener encuenta las senales involucradas en el proceso  D[7:0], PCLK, VSYNC y HREF.
+Los datos generador por estas señales  se almmacenan en un registro de 8 bits, ya que se va utilizar el formato RGB 332 se debe instanciar  la direccion donde se almacena cada pixel que se crea por las señales de entrada que vienen de la camara,PCLK   el cual permite que los datos se almacenen de manera sincronica entre la camara y la memoria. HREF  transmision de informacion de pixeles, VSYNC idica el inicio y la terminacion de la captura de datos 
+
+![Specifications](./figs/2.PNG)
+
+
+
 2. Diseñar el downsampler y transmitir la información al buffer de memoria. Recuerde la memoria se ha diseñado para almacenar el pixel en formato RGB332, y almacenar 3 bit para el color Rojo y Verde y 2 bit para el color Azul. Si usted, por ejemplo, selecciona el formato RGB565 de la cámara debe convertir los 5 bit de rojo en 3 bit.
 
 ***RECUEDE: Es necesario documentar el módulo diseñado con los respectivos diagramas funcionales y estructurales y registrar la información en README.md ***
