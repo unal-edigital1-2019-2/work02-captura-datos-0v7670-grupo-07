@@ -16,9 +16,8 @@ Para diseñar e implementar la captura de datos según la configuración selecci
 ![DIAGRAMA](./figs/test_cam2.png)
 En la figura anterior se observa que se debe adicionar las señales de amarillo y el bloque ***captura_datos_downsampler*** para completar el el proyecto ***test_cam.xise***. Se adecuo el bloque azul ***PLL*** a la FPGA Artix7.  
 
-**MATERIAL** 
+**MATERIAL**   
 Para realizar el trabajo se hace uso del siguiente material:   
-Para este paquete de trabajo se debe contar con:
 
 * Pantalla con entrada VGA y cuya resolución sea 640x480.
 * FPGA que cuenta con puerto VGA.
