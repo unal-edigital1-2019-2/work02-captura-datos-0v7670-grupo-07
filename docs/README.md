@@ -12,3 +12,4 @@ GUILLERMO CANO
  
 ![DIAGRAMA](./figs/test_cam.png)
 
+Para diseñar e implementar la captura de datos según la configuración seleccionada en el Work01, se deberá adaptar los datos para que se almacene en la memoria el pixel con el formato RGB332.
