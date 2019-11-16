@@ -8,7 +8,7 @@ GUILLERMO CANO
 **INTRODUCCIÓN**  
 <div class=text-justify>
   En esta segúnda entrega se hace uso del work01 y se propone testear el funcionamiento del driver de la camara diseñado, utilizando el esquema de trabajo dado.
-  
-</div>
-![DIAGRAMA](./docs/figs/test_cam.png)
+ </div>
+ 
+![DIAGRAMA](./figs/test_cam.png)
 
