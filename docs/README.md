@@ -1,6 +1,7 @@
 ## ELECTRÓNICA DIGITAL 1 2019 -2 UNIVERSIDAD NACIONAL DE COLOMBIA 
 ## TRABAJO 02- diseño y prueba del HDL para la cámara OV7670
 BYRON ADOLFO ERAZO CHALUPUD
+
 JHON EDISON BOHORQUEZ MARTINEZ
 
 ## Introducción 
@@ -8,12 +9,14 @@ En este trabajo se realiza el diseño e implementación de la captura de datos d
 
 ## Diseño e Impteción del Bloque captura_datos_downsampler.v
 Para el diseño de este modulo se tienen en cuenta como señales de entrada las de sincronia que vienen de la camara (PCLK, D, VSYNC Y HREF) y las que van a DP_RAM (DP_RAM_regW, DP_RAM_addr_in, DP_RAM_data_in) como salidas.
+
 ![DIAGRAMA](./figs/1.png)
 
 
 La señal PCLK, es la señal que indica cuando deben ser leído cada uno del byte de información, por lo que será la señal de control y a través de posedge cada vez que se produzca un flanco de subida esta deberá ejecutar el código que permita leer la información. Además de esto se debe adaptar al formato RGB332 el cuál tendrá un tamaño de 8 bits.
  </div>
- 
+ ![DIAGRAMA](./figs/2.png)
+
 ![DIAGRAMA](./figs/test_cam.png)
 
 Para diseñar e implementar la captura de datos según la configuración seleccionada en el Work01, se deberá adaptar los datos para que se almacene en la memoria el pixel con el formato RGB332. Según el esquema de trabajo una vez se tenga el diseño "captura_datos_downsampler" se deberá instanciar el bloqlue HDL en el test_cam.v y proceder a probar la funcionalidad del diseño. Para lo cual se debera analizar el proyecto propuesto ***test_cam.xise*** junto con la figura siguiente.  
