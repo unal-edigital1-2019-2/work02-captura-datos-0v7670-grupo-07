@@ -15,6 +15,7 @@ Para el diseño de este modulo se tienen en cuenta como señales de entrada las 
 
 La señal PCLK, es la señal que indica cuando deben ser leído cada uno del byte de información, por lo que será la señal de control y a través de posedge cada vez que se produzca un flanco de subida esta deberá ejecutar el código que permita leer la información. Además de esto se debe adaptar al formato RGB332 el cuál tendrá un tamaño de 8 bits.
  </div>
+ 
  ![DIAGRAMA](./figs/2.png)
 
 ![DIAGRAMA](./figs/test_cam.png)
