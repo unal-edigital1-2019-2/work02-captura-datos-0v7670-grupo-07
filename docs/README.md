@@ -8,7 +8,7 @@ En este trabajo se realiza el diseño e implementación de la captura de datos d
 
 ## Diseño e Impteción del Bloque captura_datos_downsampler.v
 Para el diseño de este modulo se tienen en cuenta como señales de entrada las de sincronia que vienen de la camara (PCLK, D, VSYNC Y HREF) y las que van a DP_RAM (DP_RAM_regW, DP_RAM_addr_in, DP_RAM_data_in) como salidas.
-![DIAGRAMA](./figs/WhatsApp Image 2020-02-08 at 6.50.48 PM.jpeg)
+![DIAGRAMA](./figs/1.png)
 
 
 La señal PCLK, es la señal que indica cuando deben ser leído cada uno del byte de información, por lo que será la señal de control y a través de posedge cada vez que se produzca un flanco de subida esta deberá ejecutar el código que permita leer la información. Además de esto se debe adaptar al formato RGB332 el cuál tendrá un tamaño de 8 bits.
