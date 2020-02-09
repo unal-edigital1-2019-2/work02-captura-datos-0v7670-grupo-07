@@ -92,8 +92,6 @@ en la priera pagina desplegada cabiamos unicamente en source a global clock
 
 
 
-
-
 ![Specifications](./figs/2.PNG)
 
  	* Remplazar en el proyecto **test_cam.xise**, el archivo `clk_32MHZ_to_25M_24M.v` por el generado pro ustedes.
