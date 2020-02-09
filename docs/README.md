@@ -65,15 +65,36 @@ Una vez clone el repositorio, en su computador de la plantilla del proyecto [WP0
 
 3. Revisar si el bloque PLL, `clk_32MHZ_to_25M_24M.v` (diagrama azul de la figura 1), propuesto en el bloque test_cam.v, cumple con las necesidades de reloj de entrada y salida para la plataforma utilizada. Recuerde el sistema requiere además de los 32, 50 o 100 Mhz de entrada, generar dos señales de reloj de 25Mhz y 24 Mhz para la pantalla VGA y la Cámara respectivamente. En este sentido, el archivo `clk_32MHZ_to_25M_24M.v` se encuentran en el interior de la carpeta `hdl/scr/PLL`, se debe modificar. 
 
-Para este hito se recomienda generar un nuevo PLL con `Clocking Wizard`. en el IDE de ISE debe utilizar `tools -> Core Generator ...` y general el ip con Clocking Wizard. Una vez, generado el nuevo bloque de Clk:
-* Copiar el archivo en la carpeta `hdl/scr/PLL`.
+acontinuacion se uestra el poceso para la genracion del archivo clk_32MHZ_to_25M_24M.v´
+
+1) en n el IDE de ISE debe utilizar tools -> Core Generator buscar clocking wizard.
+en la priera pagina desplegada cabiamos unicamente en source a global clock 
+
+![Specifications](./figs/clock1.PNG)
+
+
+
+
+2. en la segunda pagina creamos las señales de 24 y 25  MHz
+![Specifications](./figs/clock2.PNG)
+
+3) en las siguientes ventanas solo damos siguiente
+![Specifications](./figs/clock3.PNG)
+![Specifications](./figs/clock4.PNG)
+
+4) daos en generar y se crea las señales del reloj el cual replazaos en la carpeta PLL
+![Specifications](./figs/clock5.PNG)
+
+
+
+
+
+![Specifications](./figs/2.PNG)
+
  	* Remplazar en el proyecto **test_cam.xise**, el archivo `clk_32MHZ_to_25M_24M.v` por el generado pro ustedes.
  	* Cambiar los datos necesarios en el archivo `test_cam.v` para instanciar el nuevo PLL.
  	* Documentar en README.md el proceso realizado.
 
-4. Modificar el módulo `test_cam.v` para agregar las señales de entrada y salida necesarias para la cámara (señales amarillas del diagrama). 
-5. Instanciar el módulo diseñado en el hito 1 y 2 en el módulo `test_cam.v`.
-6. Implementar el proyecto completo y documentar los resultados. Recuerde adicionar el nombre de las señales y módulos en la figura 1 y registre el cambio en el archivo README.md
 
 
 
