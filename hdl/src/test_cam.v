@@ -30,19 +30,20 @@ module test_cam(
     output wire [3:0] VGA_B,  // 4-bit VGA blue output
 	
 	//CAMARA input/output
-	
-	output wire CAM_xclk,		// System  clock imput
+output wire CAM_xclk,		// System  clock imput
 	output wire CAM_pwdn,		// power down mode 
-	output wire CAM_reset		// clear all registers of cam
-	// colocar aqui las entras  y salidas de la camara 
-
-);
+	output wire CAM_reset,		// clear all registers of cam
+	input CAM_PCLK,				// Sennal PCLK de la camara
+	input CAM_HREF,				// Sennal HREF de la camara
+	input CAM_VSYNC,				// Sennal VSYNC de la camara
+   input wire [7:0] D         //datos de la camara 
+	);
 
 // TAMAÑO DE ADQUISICIÓN DE LA CAMARA 
-parameter CAM_SCREEN_X = 160;
-parameter CAM_SCREEN_Y = 120;
+parameter CAM_SCREEN_X = 320;
+parameter CAM_SCREEN_Y = 240;
 
-localparam AW = 15; // LOG2(CAM_SCREEN_X*CAM_SCREEN_Y)
+localparam AW = 17; // LOG2(CAM_SCREEN_X*CAM_SCREEN_Y)
 localparam DW = 8;
 
 // El color es RGB 332
@@ -92,6 +93,21 @@ assign CAM_reset=  0;
 
 
 /* ****************************************************************************
+captura_datos_downsampler
+**************************************************************************** */
+captura_de_datos_downsampler 
+	Capture_Downsampler(
+	.PCLK(CAM_PCLK),
+	.HREF(CAM_HREF),
+	.VSYNC(CAM_VSYNC),
+	.D(D),
+	.DP_RAM_data_in(DP_RAM_data_in),
+	.DP_RAM_addr_in(DP_RAM_addr_in),
+	.DP_RAM_regW(DP_RAM_regW)
+	);
+
+
+/* ****************************************************************************
   Este bloque se debe modificar según sea le caso. El ejemplo esta dado para
   fpga Spartan6 lx9 a 32MHz.
   usar "tools -> Core Generator ..."  y general el ip con Clocking Wizard
@@ -113,19 +129,18 @@ buffer_ram_dp buffer memoria dual port y reloj de lectura y escritura separados
 Se debe configurar AW  según los calculos realizados en el Wp01
 se recomiendia dejar DW a 8, con el fin de optimizar recursos  y hacer RGB 332
 **************************************************************************** */
-buffer_ram_dp #( AW,DW)
+buffer_ram_dp #(AW,DW)
 	DP_RAM(  
 	.clk_w(clk), 
 	.addr_in(DP_RAM_addr_in), 
 	.data_in(DP_RAM_data_in),
 	.regwrite(DP_RAM_regW), 
-	
 	.clk_r(clk25M), 
 	.addr_out(DP_RAM_addr_out),
-	.data_out(data_mem)
-	);
+	.data_out(data_mem),
+	.reset(rst)
+);
 	
-
 /* ****************************************************************************
 VGA_Driver640x480
 **************************************************************************** */
