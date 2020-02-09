@@ -70,20 +70,21 @@ acontinuacion se uestra el poceso para la genracion del archivo clk_32MHZ_to_25M
 1) en n el IDE de ISE debe utilizar tools -> Core Generator buscar clocking wizard.
 en la priera pagina desplegada cabiamos unicamente en source a global clock 
 
-![Specifications](./figs/clock1.PNG)
+![Specifications](./figs/clock1.png)
 
 
 
 
 2. en la segunda pagina creamos las señales de 24 y 25  MHz
-![Specifications](./figs/clock2.PNG)
+![Specifications](./figs/clock2.png)
 
 3) en las siguientes ventanas solo damos siguiente
-![Specifications](./figs/clock3.PNG)
-![Specifications](./figs/clock4.PNG)
+![Specifications](./figs/clock3.png)
+
+![Specifications](./figs/clock4.png)
 
 4) daos en generar y se crea las señales del reloj el cual replazaos en la carpeta PLL
-![Specifications](./figs/clock5.PNG)
+![Specifications](./figs/clock5.ng)
 
 
 
