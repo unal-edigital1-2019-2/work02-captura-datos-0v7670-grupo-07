@@ -20,6 +20,10 @@ La señal PCLK, es la señal que indica cuando deben ser leído cada uno del byt
 
 Para dicha adaptación se hace uso de los tres digitos más significativos del color rojo, tres del verde y dos del azul.
 
+## Diseño del downsampler y transmisión al buffer de memoria
+Como se explicó en el apartado anterior se tiene como señales de entradas las señales de sincronía del **Timing Generator** y las señal de entrada de datos, **D**, La cual tiene un longitud de 8bits y viene directamente de los pines del **DATA** del sensor y corresponden a los bits enviados por la cámara en cada ciclo de PCLK.
+
+Las salidas del módulo **captura_down_sampler.v** serán las entradas del Buffer **BUFFER_DP_RAM** por lo que deberá contar con una entrada que indique la dirección de memoria en la que se escribe el dato y otra que indique cuando se escribe, por lo que el módulo contara con las siguientes señales de entrada:
 
 
 
