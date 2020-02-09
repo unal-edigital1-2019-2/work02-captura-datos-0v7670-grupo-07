@@ -20,7 +20,13 @@ La señal PCLK, es la señal que indica cuando deben ser leído cada uno del byt
 
 Para dicha adaptación se hace uso de los tres digitos más significativos del color rojo, tres del verde y dos del azul.
 
+## Diseño del downsampler y transmisión al buffer de memoria
+Como se explicó en el apartado anterior se tiene como señales de entradas las señales de sincronía del **Timing Generator** y las señal de entrada de datos, **D**, La cual tiene un longitud de 8bits y viene directamente de los pines del **DATA** del sensor y corresponden a los bits enviados por la cámara en cada ciclo de PCLK.
 
+Las salidas del módulo **captura_down_sampler.v** serán las entradas del Buffer **BUFFER_DP_RAM** por lo que deberá contar con una entrada que indique la dirección de memoria en la que se escribe el dato y otra que indique cuando se escribe, por lo que el módulo contara con las siguientes señales de entrada:
+
+
+Las salidas
 
 
 Para diseñar e implementar la captura de datos según la configuración seleccionada en el Work01, se deberá adaptar los datos para que se almacene en la memoria el pixel con el formato RGB332. Según el esquema de trabajo una vez se tenga el diseño "captura_datos_downsampler" se deberá instanciar el bloqlue HDL en el test_cam.v y proceder a probar la funcionalidad del diseño. Para lo cual se debera analizar el proyecto propuesto ***test_cam.xise*** junto con la figura siguiente.  
@@ -65,41 +71,15 @@ Una vez clone el repositorio, en su computador de la plantilla del proyecto [WP0
 
 3. Revisar si el bloque PLL, `clk_32MHZ_to_25M_24M.v` (diagrama azul de la figura 1), propuesto en el bloque test_cam.v, cumple con las necesidades de reloj de entrada y salida para la plataforma utilizada. Recuerde el sistema requiere además de los 32, 50 o 100 Mhz de entrada, generar dos señales de reloj de 25Mhz y 24 Mhz para la pantalla VGA y la Cámara respectivamente. En este sentido, el archivo `clk_32MHZ_to_25M_24M.v` se encuentran en el interior de la carpeta `hdl/scr/PLL`, se debe modificar. 
 
-acontinuacion se uestra el poceso para la genracion del archivo clk_32MHZ_to_25M_24M.v´
-
-1) en n el IDE de ISE debe utilizar tools -> Core Generator buscar clocking wizard.
-en la priera pagina desplegada cabiamos unicamente en source a global clock 
-
-![Specifications](./figs/clock1.png)
-
-
-![Specifications](./figs/clock2.png)
-
-
-2. en la segunda pagina creamos las señales de 24 y 25  MHz
-
-![Specifications](./figs/clock3.png)
-
-3) en las siguientes ventanas solo damos siguiente
-
-
-![Specifications](./figs/clock4.png)
-
-
-4) daos en generar y se crea las señales del reloj el cual replazaos en la carpeta PLL
-
-![Specifications](./figs/clock5.ng)
-
-
-
-
-
-![Specifications](./figs/2.PNG)
-
+Para este hito se recomienda generar un nuevo PLL con `Clocking Wizard`. en el IDE de ISE debe utilizar `tools -> Core Generator ...` y general el ip con Clocking Wizard. Una vez, generado el nuevo bloque de Clk:
+* Copiar el archivo en la carpeta `hdl/scr/PLL`.
  	* Remplazar en el proyecto **test_cam.xise**, el archivo `clk_32MHZ_to_25M_24M.v` por el generado pro ustedes.
  	* Cambiar los datos necesarios en el archivo `test_cam.v` para instanciar el nuevo PLL.
  	* Documentar en README.md el proceso realizado.
 
+4. Modificar el módulo `test_cam.v` para agregar las señales de entrada y salida necesarias para la cámara (señales amarillas del diagrama). 
+5. Instanciar el módulo diseñado en el hito 1 y 2 en el módulo `test_cam.v`.
+6. Implementar el proyecto completo y documentar los resultados. Recuerde adicionar el nombre de las señales y módulos en la figura 1 y registre el cambio en el archivo README.md
 
 
 
