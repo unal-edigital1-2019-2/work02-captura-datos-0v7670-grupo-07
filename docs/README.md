@@ -7,17 +7,18 @@ JHON EDISON BOHORQUEZ MARTINEZ
 ## Introducción 
 En este trabajo se realiza el diseño e implementación de la captura de datos de la cámara "captura_datos_downsampler" según la configuración 320x240 16b pixel. Además de esto se realiza la adaptación del bloque PLL, teniendo en cuenta que la señal de reloj viene de la FPGA Spartan 6 y la seleccionada por el grupo para la implementación del proyecto corresponde a la Artix 7, así como la adaptación de los datos para que se almacenen en la memoria, teniendo en cuenta que el formato debe ser RGB332. Una vez diseñado e implementado el bloque "captura_datos_dawnsampler", se procede a instanciarlo en el **test_cam.v** para probar la funcionalidad del diseño.
 
-## Diseño e Impteción del Bloque captura_datos_downsampler.v
+## Diseño e Implementación del Bloque captura_datos_downsampler.v
 Para el diseño de este modulo se tienen en cuenta como señales de entrada las de sincronia que vienen de la camara (PCLK, D, VSYNC Y HREF) y las que van a DP_RAM (DP_RAM_regW, DP_RAM_addr_in, DP_RAM_data_in) como salidas.
 
 ![DIAGRAMA](./figs/1.png)
 
 
-La señal PCLK, es la señal que indica cuando deben ser leído cada uno del byte de información, por lo que será la señal de control y a través de posedge cada vez que se produzca un flanco de subida esta deberá ejecutar el código que permita leer la información. Además de esto se debe adaptar al formato RGB332 el cuál tendrá un tamaño de 8 bits.
+La señal PCLK, es la señal que indica cuando deben ser leído cada uno del byte de información, por lo que será la señal de control y a través de posedge cada vez que se produzca un flanco de subida esta deberá ejecutar el código que permita leer la información. Además de esto se debe adaptar del formato RGB565 de la salida de la camara al formato RGB332 el cuál tendrá un tamaño de 8 bits.
  </div>
  
  ![DIAGRAMA](./figs/21.png)
 
+Para dicha adaptación se hace uso de los tres digitos más significativos del color rojo, tres del verde y dos del azul.
 
 
 
