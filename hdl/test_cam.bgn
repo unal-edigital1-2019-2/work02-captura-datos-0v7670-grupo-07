@@ -5,28 +5,15 @@ Loading device for application Rf_Device from file '7a100t.nph' in environment
    "test_cam" is an NCD, version 3.2, device xc7a100t, package csg324, speed -3
 Opened constraints file test_cam.pcf.
 
-Sun Feb  9 18:03:53 2020
+Sun Feb  9 19:29:30 2020
 
 /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/bitgen -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g ConfigRate:3 -g CclkPin:PullUp -g M0Pin:PullUp -g M1Pin:PullUp -g M2Pin:PullUp -g ProgPin:PullUp -g InitPin:Pullup -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g Disable_JTAG:No -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g ExtMasterCclk_en:Disable -g ConfigFallback:Disable -g BPI_page_size:1 -g BPI_sync_mode:Disable -g SPI_32bit_addr:No -g SPI_buswidth:1 -g SPI_Fall_Edge:No -g OverTempPowerDown:Disable -g USR_ACCESS:None -g JTAG_XADC:Enable -g DCIUpdateMode:AsRequired -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g Match_cycle:Auto -g Security:None -g ICAP_select:Auto -g DonePipe:Yes -g Encrypt:No test_cam.ncd 
 
-ERROR:Bitgen:342 - This design contains pins which have locations (LOC) that are
-   not user-assigned or I/O Standards (IOSTANDARD) that are not user-assigned. 
-   This may cause I/O contention or incompatibility with the board power or
-   connectivity affecting performance, signal integrity or in extreme cases
-   cause damage to the device or the components to which it is connected.  To
-   prevent this error, it is highly suggested to specify all pin locations and
-   I/O standards to avoid potential contention or conflicts and allow proper
-   bitstream creation.  To demote this error to a warning and allow bitstream
-   creation with unspecified I/O location or standards, you may apply the
-   following bitgen switch: -g UnconstrainedPins:Allow
-This message applies to the following I/O ports:
-   rst
 INFO:Bitgen:40 - Replacing "Auto" with "NoWait" for option "Match_cycle".  Most
    commonly, bitgen has determined and will use a specific value instead of the
    generic command-line value of "Auto".  Alternately, this message appears if
    the same option is specified multiple times on the command-line.  In this
    case, the option listed last will be used.
-ERROR:Bitgen:157 - Bitgen will terminate because of the above errors.
 Summary of Bitgen Options:
 +----------------------+----------------------+
 | Option Name          | Current Setting      |
@@ -163,3 +150,13 @@ Summary of Bitgen Options:
 There were 0 CONFIG constraint(s) processed from test_cam.pcf.
 
 
+Running DRC.
+WARNING:PhysDesignRules:367 - The signal <D<6>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <D<7>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+DRC detected 0 errors and 2 warnings.  Please see the previously displayed
+individual error or warning messages for more details.
+Creating bit map...
+Saving bit stream in "test_cam.bit".
+Bitstream generation is complete.

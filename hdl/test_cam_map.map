@@ -10,14 +10,11 @@ Target Device  : xc7a100t
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : artix7 -- $Revision: 1.55 $
-Mapped Date    : Sun Feb  9 17:50:14 2020
+Mapped Date    : Sun Feb  9 19:24:57 2020
 
 WARNING:LIT:563 - PLL_ADV symbol "clk25_24/pll_base_inst" (output
    signal=clk25_24/clkout0) has attribute CLK_FEEDBACK set to value CLKFBOUT. It
    will be ignored when retargeting the PLL_ADV into MMCM. 
-WARNING:LIT:701 - PAD symbol "rst" has an undefined IOSTANDARD.
-WARNING:LIT:702 - PAD symbol "rst" is not constrained (LOC) to a specific
-   location.
 Mapping design into LUTs...
 Running directed packing...
 Running delay-based LUT packing...
@@ -25,28 +22,25 @@ Updating timing models...
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
-Total REAL time at the beginning of Placer: 1 mins 13 secs 
-Total CPU  time at the beginning of Placer: 1 mins 9 secs 
+Total REAL time at the beginning of Placer: 1 mins 9 secs 
+Total CPU  time at the beginning of Placer: 1 mins 7 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:fb2caf9e) REAL time: 1 mins 21 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:fb49eabe) REAL time: 1 mins 16 secs 
 
 Phase 2.7  Design Feasibility Check
-INFO:Place:834 - Only a subset of IOs are locked. Out of 30 IOs, 29 are locked
-   and 1 are not locked. If you would like to print the names of these IOs,
-   please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
-Phase 2.7  Design Feasibility Check (Checksum:fb2caf9e) REAL time: 1 mins 21 secs 
+Phase 2.7  Design Feasibility Check (Checksum:fb49eabe) REAL time: 1 mins 16 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:fb2caf9e) REAL time: 1 mins 21 secs 
+Phase 3.31  Local Placement Optimization (Checksum:fb49eabe) REAL time: 1 mins 16 secs 
 
 Phase 4.2  Initial Placement for Architecture Specific Features
-...
+
 ........
 WARNING:Place:1399 - A clock IOB / BUFGCTRL clock component pair have been found
    that are not placed at an optimal clock IOB / BUFGCTRL site pair. The clock
    IOB component <CAM_PCLK> is placed at site <J2>. The corresponding BUFGCTRL
-   component <CAM_PCLK_BUFGP/BUFG> is placed at site <BUFGCTRL_X0Y10>. The clock
+   component <CAM_PCLK_BUFGP/BUFG> is placed at site <BUFGCTRL_X0Y31>. The clock
    IO can use the fast path between the IOB and the Clock Buffer if the IOB is
    placed on a Clock Capable IOB site that has dedicated fast path to BUFGCTRL
    sites in its half of the device (TOP or BOTTOM). You may want to analyze why
@@ -57,58 +51,52 @@ WARNING:Place:1399 - A clock IOB / BUFGCTRL clock component pair have been found
    discouraged as it may lead to very poor timing results. It is recommended
    that this error condition be corrected in the design.
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:c5647b3e) REAL time: 1 mins 33 secs 
+(Checksum:48f0d0e2) REAL time: 1 mins 28 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:c5647b3e) REAL time: 1 mins 33 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:48f0d0e2) REAL time: 1 mins 28 secs 
 
 Phase 6.3  Local Placement Optimization
-...
-Phase 6.3  Local Placement Optimization (Checksum:737918cb) REAL time: 1 mins 34 secs 
+Phase 6.3  Local Placement Optimization (Checksum:48f0d0e2) REAL time: 1 mins 29 secs 
 
 Phase 7.5  Local Placement Optimization
-Phase 7.5  Local Placement Optimization (Checksum:8b78f3b7) REAL time: 1 mins 34 secs 
+Phase 7.5  Local Placement Optimization (Checksum:48f0d0e2) REAL time: 1 mins 29 secs 
 
 Phase 8.8  Global Placement
 ........................................
-....................
+...................................
 ...
 ................
-.......................
-Phase 8.8  Global Placement (Checksum:9853dd77) REAL time: 1 mins 51 secs 
+................
+Phase 8.8  Global Placement (Checksum:33445a44) REAL time: 1 mins 48 secs 
 
 Phase 9.5  Local Placement Optimization
-Phase 9.5  Local Placement Optimization (Checksum:9853dd77) REAL time: 1 mins 51 secs 
+Phase 9.5  Local Placement Optimization (Checksum:33445a44) REAL time: 1 mins 48 secs 
 
 Phase 10.18  Placement Optimization
-Phase 10.18  Placement Optimization (Checksum:6a413f96) REAL time: 2 mins 10 secs 
+Phase 10.18  Placement Optimization (Checksum:763a571b) REAL time: 2 mins 1 secs 
 
 Phase 11.5  Local Placement Optimization
-Phase 11.5  Local Placement Optimization (Checksum:6a413f96) REAL time: 2 mins 10 secs 
+Phase 11.5  Local Placement Optimization (Checksum:763a571b) REAL time: 2 mins 1 secs 
 
 Phase 12.34  Placement Validation
-Phase 12.34  Placement Validation (Checksum:6a413f96) REAL time: 2 mins 10 secs 
+Phase 12.34  Placement Validation (Checksum:763a571b) REAL time: 2 mins 1 secs 
 
-Total REAL time to Placer completion: 2 mins 11 secs 
-Total CPU  time to Placer completion: 2 mins 6 secs 
+Total REAL time to Placer completion: 2 mins 2 secs 
+Total CPU  time to Placer completion: 1 mins 59 secs 
 Running post-placement packing...
 Writing output files...
 WARNING:PhysDesignRules:367 - The signal <D<6>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <D<7>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
-WARNING:PhysDesignRules:2452 - The IOB rst is either not constrained (LOC) to a
-   specific location and/or has an undefined I/O Standard (IOSTANDARD). This
-   condition may seriously affect the device and will be an error in bitstream
-   creation. It should be corrected by properly specifying the pin location and
-   I/O Standard.
 
 Design Summary
 --------------
 
 Design Summary:
 Number of errors:      0
-Number of warnings:    7
+Number of warnings:    4
 Slice Logic Utilization:
   Number of Slice Registers:                    48 out of 126,800    1%
     Number used as Flip Flops:                  48
@@ -128,11 +116,11 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    53 out of  15,850    1%
-  Number of LUT Flip Flop pairs used:          130
-    Number with an unused Flip Flop:            86 out of     130   66%
-    Number with an unused LUT:                   1 out of     130    1%
-    Number of fully used LUT-FF pairs:          43 out of     130   33%
+  Number of occupied Slices:                    55 out of  15,850    1%
+  Number of LUT Flip Flop pairs used:          129
+    Number with an unused Flip Flop:            85 out of     129   65%
+    Number with an unused LUT:                   0 out of     129    0%
+    Number of fully used LUT-FF pairs:          44 out of     129   34%
     Number of unique control sets:               6
     Number of slice register sites lost
       to control set restrictions:              32 out of 126,800    1%
@@ -147,7 +135,7 @@ Slice Logic Distribution:
 
 IO Utilization:
   Number of bonded IOBs:                        30 out of     210   14%
-    Number of LOCed IOBs:                       29 out of      30   96%
+    Number of LOCed IOBs:                       30 out of      30  100%
 
 Specific Feature Utilization:
   Number of RAMB36E1/FIFO36E1s:                 32 out of     135   23%
@@ -184,11 +172,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of XADCs:                               0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                12.22
+Average Fanout of Non-Clock Nets:                12.21
 
-Peak Memory Usage:  1224 MB
-Total REAL time to MAP completion:  2 mins 15 secs 
-Total CPU time to MAP completion:   2 mins 10 secs 
+Peak Memory Usage:  1222 MB
+Total REAL time to MAP completion:  2 mins 6 secs 
+Total CPU time to MAP completion:   2 mins 3 secs 
 
 Mapping completed.
 See MAP report file "test_cam_map.mrp" for details.

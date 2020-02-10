@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Map" timeStamp="Sun Feb  9 17:52:30 2020">
+  <application stringID="Map" timeStamp="Sun Feb  9 19:27:04 2020">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -49,7 +49,7 @@
         <column stringID="speed"/>
         <row stringID="row" value="0">
           <item stringID="arch" value="Intel(R) Celeron(R) CPU  N3060  @ 1.60GHz"/>
-          <item stringID="speed" value="694.546 MHz"/>
+          <item stringID="speed" value="2082.634 MHz"/>
         </row>
       </table>
     </section>
@@ -120,10 +120,10 @@
       <section stringID="MAP_DESIGN_SUMMARY">
         <item dataType="int" stringID="MAP_NUM_ERRORS" value="0"/>
         <item dataType="int" stringID="MAP_FILTERED_WARNINGS" value="0"/>
-        <item dataType="int" stringID="MAP_NUM_WARNINGS" value="7"/>
-        <item UNITS="KB" dataType="int" stringID="MAP_PEAK_MEMORY" value="1253460"/>
-        <item stringID="MAP_TOTAL_REAL_TIME" value="2 mins 15 secs "/>
-        <item stringID="MAP_TOTAL_CPU_TIME" value="2 mins 10 secs "/>
+        <item dataType="int" stringID="MAP_NUM_WARNINGS" value="4"/>
+        <item UNITS="KB" dataType="int" stringID="MAP_PEAK_MEMORY" value="1251696"/>
+        <item stringID="MAP_TOTAL_REAL_TIME" value="2 mins 6 secs "/>
+        <item stringID="MAP_TOTAL_CPU_TIME" value="2 mins 3 secs "/>
       </section>
       <section stringID="MAP_SLICE_REPORTING">
         <item AVAILABLE="126800" dataType="int" label="Number of Slice Registers" stringID="MAP_SLICE_REGISTERS" value="48">
@@ -155,14 +155,14 @@
           <item dataType="int" stringID="MAP_NUM_LUT_RT_DRIVES_CARRY4" value="5"/>
           <item dataType="int" stringID="MAP_NUM_LUT_RT_DRIVES_OTHERS" value="0"/>
         </item>
-        <item AVAILABLE="15850" dataType="int" label="Number of occupied Slices" stringID="MAP_OCCUPIED_SLICES" value="53">
-          <item AVAILABLE="11100" dataType="int" stringID="MAP_NUM_SLICEL" value="53"/>
+        <item AVAILABLE="15850" dataType="int" label="Number of occupied Slices" stringID="MAP_OCCUPIED_SLICES" value="55">
+          <item AVAILABLE="11100" dataType="int" stringID="MAP_NUM_SLICEL" value="55"/>
           <item AVAILABLE="4750" dataType="int" stringID="MAP_NUM_SLICEM" value="0"/>
         </item>
-        <item dataType="int" label="Number of LUT Flip Flop pairs used" stringID="MAP_OCCUPIED_LUT_AND_FF" value="130">
-          <item dataType="int" stringID="MAP_OCCUPIED_LUT_ONLY" value="86"/>
-          <item dataType="int" label="Number with an unused LUT" stringID="MAP_OCCUPIED_FF_ONLY" value="1"/>
-          <item dataType="int" label="Number of fully used LUT-FF pairs" stringID="MAP_OCCUPIED_FF_AND_LUT" value="43"/>
+        <item dataType="int" label="Number of LUT Flip Flop pairs used" stringID="MAP_OCCUPIED_LUT_AND_FF" value="129">
+          <item dataType="int" stringID="MAP_OCCUPIED_LUT_ONLY" value="85"/>
+          <item dataType="int" label="Number with an unused LUT" stringID="MAP_OCCUPIED_FF_ONLY" value="0"/>
+          <item dataType="int" label="Number of fully used LUT-FF pairs" stringID="MAP_OCCUPIED_FF_AND_LUT" value="44"/>
         </item>
       </section>
       <section stringID="MAP_IOB_REPORTING">
@@ -439,9 +439,9 @@
           </row>
           <row stringID="row" value="30">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="rst"/>
-            <item stringID="Type" value="IOB"/>
+            <item stringID="Type" value="IOB33"/>
             <item stringID="Direction" value="INPUT"/>
-            <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS18"/>
+            <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS33"/>
           </row>
         </table>
       </section>

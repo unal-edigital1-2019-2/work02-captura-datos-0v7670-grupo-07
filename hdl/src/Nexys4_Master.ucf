@@ -5,6 +5,7 @@
 
 ## Clock signal
 NET "clk"   LOC = "E3"	| IOSTANDARD = "LVCMOS33";	
+NET "rst" LOC=M17 | IOSTANDARD=LVCMOS33;
 
 NET "CAM_PCLK" CLOCK_DEDICATED_ROUTE = FALSE; 
 				#Bank = 35, Pin name = IO_L12P_T1_MRCC_35,					Sch name = CLK100MHZ

@@ -10,12 +10,12 @@ Target Device  : xc7a100t
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : artix7 -- $Revision: 1.55 $
-Mapped Date    : Sun Feb  9 17:50:14 2020
+Mapped Date    : Sun Feb  9 19:24:57 2020
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    7
+Number of warnings:    4
 Slice Logic Utilization:
   Number of Slice Registers:                    48 out of 126,800    1%
     Number used as Flip Flops:                  48
@@ -35,11 +35,11 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    53 out of  15,850    1%
-  Number of LUT Flip Flop pairs used:          130
-    Number with an unused Flip Flop:            86 out of     130   66%
-    Number with an unused LUT:                   1 out of     130    1%
-    Number of fully used LUT-FF pairs:          43 out of     130   33%
+  Number of occupied Slices:                    55 out of  15,850    1%
+  Number of LUT Flip Flop pairs used:          129
+    Number with an unused Flip Flop:            85 out of     129   65%
+    Number with an unused LUT:                   0 out of     129    0%
+    Number of fully used LUT-FF pairs:          44 out of     129   34%
     Number of unique control sets:               6
     Number of slice register sites lost
       to control set restrictions:              32 out of 126,800    1%
@@ -54,7 +54,7 @@ Slice Logic Distribution:
 
 IO Utilization:
   Number of bonded IOBs:                        30 out of     210   14%
-    Number of LOCed IOBs:                       29 out of      30   96%
+    Number of LOCed IOBs:                       30 out of      30  100%
 
 Specific Feature Utilization:
   Number of RAMB36E1/FIFO36E1s:                 32 out of     135   23%
@@ -91,11 +91,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of XADCs:                               0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                12.22
+Average Fanout of Non-Clock Nets:                12.21
 
-Peak Memory Usage:  1224 MB
-Total REAL time to MAP completion:  2 mins 15 secs 
-Total CPU time to MAP completion:   2 mins 10 secs 
+Peak Memory Usage:  1222 MB
+Total REAL time to MAP completion:  2 mins 6 secs 
+Total CPU time to MAP completion:   2 mins 3 secs 
 
 Table of Contents
 -----------------
@@ -121,13 +121,10 @@ Section 2 - Warnings
 WARNING:LIT:563 - PLL_ADV symbol "clk25_24/pll_base_inst" (output
    signal=clk25_24/clkout0) has attribute CLK_FEEDBACK set to value CLKFBOUT. It
    will be ignored when retargeting the PLL_ADV into MMCM. 
-WARNING:LIT:701 - PAD symbol "rst" has an undefined IOSTANDARD.
-WARNING:LIT:702 - PAD symbol "rst" is not constrained (LOC) to a specific
-   location.
 WARNING:Place:1399 - A clock IOB / BUFGCTRL clock component pair have been found
    that are not placed at an optimal clock IOB / BUFGCTRL site pair. The clock
    IOB component <CAM_PCLK> is placed at site <J2>. The corresponding BUFGCTRL
-   component <CAM_PCLK_BUFGP/BUFG> is placed at site <BUFGCTRL_X0Y10>. The clock
+   component <CAM_PCLK_BUFGP/BUFG> is placed at site <BUFGCTRL_X0Y31>. The clock
    IO can use the fast path between the IOB and the Clock Buffer if the IOB is
    placed on a Clock Capable IOB site that has dedicated fast path to BUFGCTRL
    sites in its half of the device (TOP or BOTTOM). You may want to analyze why
@@ -141,11 +138,6 @@ WARNING:PhysDesignRules:367 - The signal <D<6>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <D<7>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
-WARNING:PhysDesignRules:2452 - The IOB rst is either not constrained (LOC) to a
-   specific location and/or has an undefined I/O Standard (IOSTANDARD). This
-   condition may seriously affect the device and will be an error in bitstream
-   creation. It should be corrected by properly specifying the pin location and
-   I/O Standard.
 
 Section 3 - Informational
 -------------------------
@@ -163,9 +155,6 @@ INFO:Pack:1720 - Initializing voltage to 0.950 Volts. (default - Range: 0.950 to
    1.050 Volts)
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
-INFO:Place:834 - Only a subset of IOs are locked. Out of 30 IOs, 29 are locked
-   and 1 are not locked. If you would like to print the names of these IOs,
-   please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
 INFO:Pack:1650 - Map created a placed design.
 
 Section 4 - Removed Logic Summary
@@ -219,7 +208,7 @@ Section 6 - IOB Properties
 | VGA_R<3>                           | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | VGA_Vsync_n                        | IOB33            | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | clk                                | IOB33            | INPUT     | LVCMOS33             |       |          |      |              |          |          |
-| rst                                | IOB              | INPUT     | LVCMOS18             |       |          |      |              |          |          |
+| rst                                | IOB33            | INPUT     | LVCMOS33             |       |          |      |              |          |          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Section 7 - RPMs
