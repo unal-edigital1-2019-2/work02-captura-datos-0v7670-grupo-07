@@ -124,12 +124,11 @@ Se declararan las salidas del puerto VGA: los puertos para el pixel; que son 12 
 
 2. Realizar el test de la pantalla. Programar la FPGA con el bitstream del proyecto y no conectar la cámara. ¿Qué espera visualizar?, ¿Es correcto este resultado ?
 
-se espera visualizar los datos almacendos en el archivo image.men  el cual conforma  lineas veritcales de colores ( Blanco FF  Rojo E0,Verde 1C)
-* Azul => 03efectivaente coo se uestra a continuacion
-
-![Specifications](./figs/foto1.png)
+se espera visualizar los datos almacendos en el archivo image.men  el cual conforma  lineas veritcales de colores ( Blanco FF  Rojo E0,Verde 1, Azul 03) efectivaente como se uestra a continuacion
 
 ![Specifications](./figs/foto3.png)
+
+![Specifications](./figs/foto2.png)
 
 
 3. Configure la cámara en test por medio del bus I2C con ayuda de Arduino. ¿Es correcto el resultado? ¿Cada cuánto se refresca el buffer de memoria ?
