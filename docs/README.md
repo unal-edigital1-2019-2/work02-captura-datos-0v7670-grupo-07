@@ -25,6 +25,10 @@ Como se explicó en el apartado anterior se tiene como señales de entradas las 
 
 Las salidas del módulo **captura_down_sampler.v** serán las entradas del Buffer **BUFFER_DP_RAM** por lo que deberá contar con una entrada que indique la dirección de memoria en la que se escribe el dato y otra que indique cuando se escribe, por lo que el módulo contara con las siguientes señales de entrada:
 
+**DP_RAM_addr_in:** Esta señal de memoria actualiza la posición de memoria con cada pixel recibido y de esta manera no se presente sobreescritura.
+**DP_RAM_regW:** Se activa cuando se haya recibido el píxel completo, indicando cuando se puede escribir en memoria.
+
+En el buffer se almacena una imagen completa, por lo que hay que reiniciar la posición de memoria, cada vez que recibe un fotograma, es decir cuando VSYNC cambia a nivel alto.
 
 
 Para diseñar e implementar la captura de datos según la configuración seleccionada en el Work01, se deberá adaptar los datos para que se almacene en la memoria el pixel con el formato RGB332. Según el esquema de trabajo una vez se tenga el diseño "captura_datos_downsampler" se deberá instanciar el bloqlue HDL en el test_cam.v y proceder a probar la funcionalidad del diseño. Para lo cual se debera analizar el proyecto propuesto ***test_cam.xise*** junto con la figura siguiente.  
