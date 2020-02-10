@@ -124,17 +124,20 @@ Se declararan las salidas del puerto VGA: los puertos para el pixel; que son 12 
 
 2. Realizar el test de la pantalla. Programar la FPGA con el bitstream del proyecto y no conectar la cámara. ¿Qué espera visualizar?, ¿Es correcto este resultado ?
 
-se espera visualizar los datos almacendos en el archivo image.men  el cual conforma  lineas veritcales de colores efectivaente coo se uestra a continuacion
+se espera visualizar los datos almacendos en el archivo image.men  el cual conforma  lineas veritcales de colores ( Blanco FF  Rojo E0,Verde 1C)
+* Azul => 03efectivaente coo se uestra a continuacion
 
 ![Specifications](./figs/foto1.png)
 
-![Specifications](./figs/foto2.png)
+![Specifications](./figs/foto3.png)
 
 
 3. Configure la cámara en test por medio del bus I2C con ayuda de Arduino. ¿Es correcto el resultado? ¿Cada cuánto se refresca el buffer de memoria ?
 
-
+ en la inforacion de la camara ov7670 se detalla que es capaz de enviar 30 cuadros por segundo y ddepndiendo del tamaño este sera mas rapido  o lento, para una configuracion de tamaño 320 x240 pixeles esta termina un frame cada 33.3 ms ya que la cámara termina de completar  76.800 pixeles. 
 
 4. ¿Qué falta implementar para tener el control de la toma de fotos ?
+
+un boton que permita controlar cuando se caprura una sola fotografia
 
 ***RECUEDE: Es necesario documentar la implementación y registrar la información en README.md, lo puede hacer con ayuda de imágenes o videos***
