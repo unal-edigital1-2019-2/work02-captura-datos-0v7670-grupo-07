@@ -31,6 +31,16 @@ Las salidas del módulo **captura_down_sampler.v** serán las entradas del Buffe
 
 En el buffer se almacena una imagen completa, por lo que hay que reiniciar la posición de memoria, cada vez que recibe un fotograma, es decir cuando VSYNC cambia a nivel alto.
 
+La siguiente parte se encarga de leer el pixel completo teniendo en cuenta la secuencia para el formato de color. Para controlar los cilos de escritura, habilitamos cont.
+
+![DIAGRAMA](./figs/lectPixel.png)
+
+Guardamos en la señal **DP_RAM_data_in**, la cual contiene el pixel completo en el formato RGB332.
+
+Mediante el uso del evento de flanco **negedge** (flanco de bajada) y la condicional ~VSYNC y HREF en alto, actualiza la posición de memoria.
+
+![DIAGRAMA](./figs/ActPmem.png)
+
 
 Para diseñar e implementar la captura de datos según la configuración seleccionada en el Work01, se deberá adaptar los datos para que se almacene en la memoria el pixel con el formato RGB332. Según el esquema de trabajo una vez se tenga el diseño "captura_datos_downsampler" se deberá instanciar el bloqlue HDL en el test_cam.v y proceder a probar la funcionalidad del diseño. Para lo cual se debera analizar el proyecto propuesto ***test_cam.xise*** junto con la figura siguiente.  
 ![DIAGRAMA](./figs/test_cam2.png)
